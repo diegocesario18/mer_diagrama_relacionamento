@@ -1,4 +1,10 @@
 # mer_diagrama_relacionamento
+IFSULDEMINAS - Campus Poços de Caldas/MG
+PROJETO MER – Site de Compras
+Modelo Entidade- Relacionamento
+Diego Cesário da Silva   -      Matrícula:  202324410294
+Professor: Paulo M. Avila
+
 Criado a representação de um site com MER e diagramas representando uma venda de produtos e clientes com a finalidade de cumprir atividade de tecnologia.
 Sem fins comerciais, somente para cumpmimento de requisitos de curso/tarefa.
 Foi criado o código Diagrama utilizando o programa  brModelo Jar 3.2, e definidas as Entidades, atributos e respectivos relacionamentos.
