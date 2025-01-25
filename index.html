@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto MER - Site de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 1em 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .entity {
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .mer-diagram {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .mer-box {
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #e8f5e9;
+            width: 200px;
+        }
+        .mer-box a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .mer-box a:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .relation {
+            font-size: 12px;
+            color: #555;
+        }
+        @media (max-width: 768px) {
+            .mer-diagram {
+                flex-direction: column;
+            }
+        }
+
+      .imagem-estilizada {
+           width: 50%; 
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+            object-fit: cover; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projeto MER - Site de Compras</h1>
+        <p>Modelo Entidade-Relacionamento</p>
+<p><h5> Diego Cesário da Silva   -  Matrícula:  202324410294 </h5></p>
+
+    </header>
+
+    <div class="container">
+  
+        <div class="mer-diagram">
+            <div class="mer-box"><a href="#cliente">Cliente</a></div>
+            <div class="mer-box"><a href="#compras">Compras</a></div>
+            <div class="mer-box"><a href="#produto">Produto</a></div>
+            <div class="mer-box"><a href="#estoque">Estoque</a></div>
+        </div>
+
+
+       <div class="container">
+      <!-- Diagrama MER -->
+        <img src="MER_Vendas.jpeg" alt="Diagrama MER do Site de Compras">Diagrama MER (Venda de Produtos)</img>
+
+<a href="MER_Vendas.brM3">Baixar o arquivo Gerado do Diagrama</a>
+      </div>
+
+        <!-- Entidades -->
+        <section id="cliente" class="entity">
+            <h2>Cliente</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Cod_Cliente (Chave Primária)</li>
+                <li>Cod_Compra (Chave Estrangeira)</li>
+                <li>Nome</li>
+                <li>CPF</li>
+                <li>Endereço</li>
+                <li>E-mail</li>
+                <li>Telefone</li>
+                <li>Cidade</li>
+                <li>UF</li>
+               
+            </ul>
+            <p class="relation"><strong>OBS:</strong> Relacionamento 1:N com Compras.</p>
+        </section>
+
+        <section id="produto" class="entity">
+            <h2>Produto</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Cod_Produto (Chave Primária)</li>
+                <li>Cod_Estoque (Chave Estrangeira)</li>
+                <li>Nome</li>
+                <li>Marca</li>
+                <li>Vr_Unitario</li>
+                <li>Caracteristicas</li>
+            </ul>
+            <p class="relation"><strong>OBS:</strong> Relacionamento N:N com Compras.</p>
+        </section>
+
+        <section id="estoque" class="entity">
+            <h2>Estoque</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Código Estoque (Chave Primária)</li>
+                <li>Cod_Produto (Chave Estrangeira)</li>
+                <li>Quantidade em Estoque</li>
+            </ul>
+            <p class="relation"><strong>OBS:</strong> Relacionamento 1:1 com Produto.</p>
+        </section>
+
+        <section id="compras" class="entity">
+            <h2>Compras</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Cod_Compra (Chave Primária)</li>
+                <li>Cod_Cliente (Chave Estrangeira)</li>
+                <li>Cod_Produto (Chave Estrangeira)</li>
+                <li>Quantidade</li>
+                <li>Valor Total</li>
+                <li>Data da Compra</li>
+                <li>Forma_Pagto (pix; cartão_debito; cartão_credito;transf_bancária): </li>
+                <li>Vendedor</li>
+            </ul>
+            <p class="relation"><strong>OBS:</strong> Relacionamento N:N entre Produto e Cliente.</p>
+        </section>
+    </div>
+
+
+    <div class="container">
+      <!--Simulação de um site de vendas-->
+        <!-- Simulação -->
+        <section id="cliente" class="entity">
+            <h2>Site de Vendas</h2>
+            <p><strong>Site de Login e Senha:</strong></p>
+<a href="login_senha.html">Fazer acesso ao Login e Senha</a>
+<a> <h6> <b>Informações: </b> 
+Essa é uma aplicação que engloba muitos aspectos de um sistema de vendas, com login e gerenciamento de clientes, produtos, estoque e compras. Para implementar, vamos dividir em duas partes principais: <br>
+Página inicial de acesso (login com pop-up).<br>
+Página básica de um site de vendas com estrutura funcional (listagem de produtos e compra básica).<br><h6> </a>
+<h5> Para acessar o login digite usuário: <b>admin</b>   e  senha: <b>admin</b>
+            <ul>
+            <h2>Plataforma de Vendas </h2>
+            <p><strong>Plataforma direta:</strong></p>
+<a href="site-vendas.html">Acesso direto sem Login</a>
+            <ul>
+        </ul>
+    </div>
+
+    <footer class="footer">
+        &copy; 2025 Projeto MER- Autor:  Diego Cesário -  Data publicação:   25/01/2025 0 Todos os direitos reservados.
+    </footer>
+</body>
+</html>
