@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto MER - Site de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 1em 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .entity {
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .mer-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .mer-box {
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #e8f5e9;
+            width: 200px;
+            position: relative;
+        }
+        .mer-box a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .mer-box a:hover {
+            text-decoration: underline;
+        }
+        .line {
+            position: absolute;
+            height: 2px;
+            background-color: #4CAF50;
+        }
+        .relation-1n::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 40px;
+            height: 2px;
+            background-color: #4CAF50;
+        }
+        .relation-1n::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 40px);
+            width: 10px;
+            height: 10px;
+            border: 2px solid #4CAF50;
+            border-radius: 50%;
+            background-color: white;
+            transform: translateY(-50%);
+        }
+        .relation-nn::before {
+            content: "N";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 2px 5px;
+            font-size: 12px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .mer-diagram {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projeto MER - Site de Compras</h1>
+        <p>Clique nas entidades para entender os requisitos</p>
+    </header>
+
+    <nav>
+        <a href="#cliente">Cliente</a>
+        <a href="#produto">Produto</a>
+        <a href="#estoque">Estoque</a>
+        <a href="#compras">Compras</a>
+        <a href="#site-compras">Site Compras</a>
+    </nav>
+
+    <div class="container">
+        <section id="cliente" class="entity">
+            <h2>Cliente</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Código Cliente</li>
+                <li>Nome</li>
+                <li>CPF</li>
+                <li>E-mail</li>
+                <li>Endereço</li>
+                <li>Cidade</li>
+                <li>Estado</li>
+                <li>Telefone</li>
+            </ul>
+        </section>
+
+        <section id="produto" class="entity">
+            <h2>Produto</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Código Produto</li>
+                <li>Nome</li>
+                <li>Marca</li>
+                <li>Valor Unitário</li>
+                <li>Características</li>
+                <li>Quantidade</li>
+            </ul>
+        </section>
+
+        <section id="estoque" class="entity">
+            <h2>Estoque</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Código Produto (Chave Estrangeira)</li>
+                <li>Informações do Produto</li>
+                <li>Quantidade em Estoque</li>
+            </ul>
+        </section>
+
+        <section id="compras" class="entity">
+            <h2>Compras</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Código da Compra</li>
+                <li>Código Cliente (Chave Estrangeira)</li>
+                <li>Código Produto (Chave Estrangeira)</li>
+                <li>Quantidade</li>
+                <li>Valor Unitário</li>
+                <li>Valor Total</li>
+                <li>Data da Compra</li>
+                <li>Vendedor</li>
+            </ul>
+        </section>
+
+        <section id="site-compras" class="entity">
+            <h2>Site Compras</h2>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Cadastro (Login, Cliente, Senha)</li>
+                <li>Acesso às Compras</li>
+                <li>Processo de Vendas Integrado</li>
+            </ul>
+        </section>
+
+        <div class="mer-diagram">
+            <div class="mer-box"><a href="#cliente">Cliente</a></div>
+            <div class="mer-box relation-1n"><a href="#compras">Compras</a></div>
+            <div class="mer-box relation-nn"><a href="#produto">Produto</a></div>
+            <div class="mer-box"><a href="#estoque">Estoque</a></div>
+        </div>
+    </div>
+<br><br><br><br>
+<hr>
+    <footer class="footer">
+        &copy; 2025 Projeto MER - Todos os direitos reservados.
+    </footer>
+</body>
+</html>
