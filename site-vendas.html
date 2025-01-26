@@ -67,19 +67,35 @@
 <body>
     <header>
         <h1>Catálogo de Produtos</h1>
+            <nav>
+        <a href="#cliente">PROCESSADORES</a>
+        <a href="#produto">MOTHERBOARDS</a>
+        <a href="#estoque">GABINETES</a>
+        <a href="#compras">MONITORES</a>
+        <a href="#site_compras">Site/Login</a>
+    </nav>
     </header>
     <div class="container">
         <div class="product-card">
-            <img src="produto1.jpg" alt="Produto 1">
-            <h3>Produto 1</h3>
-            <p>R$ 100,00</p>
+            <img src="monitor.jpg" alt="Produto 1">
+            <h3>Produto 1 <BR> MONITOR</h3>
+            <p>R$ 1.000,00</p>
             <button onclick="addToCart('Produto 1', 100)">Adicionar ao Carrinho</button>
         </div>
+        
+    <div class="container">
         <div class="product-card">
-            <img src="produto2.jpg" alt="Produto 2">
-            <h3>Produto 2</h3>
-            <p>R$ 200,00</p>
-            <button onclick="addToCart('Produto 2', 200)">Adicionar ao Carrinho</button>
+            <img src="gabinete.jpg" alt="Produto 2">
+            <h3>Produto 2 <br> GABINETE </h3>
+            <p>R$ 2.800,00</p>
+            <button onclick="addToCart('Produto 2', 150)">Adicionar ao Carrinho</button>
+        </div>
+        
+        <div class="product-card">
+            <img src="produto2.jpg" alt="Produto 3">
+            <h3>Produto 3 <BR> PROCESSADOR core I3</h3>
+            <p>R$ 1.100,00</p>
+            <button onclick="addToCart('Produto 3', 200)">Adicionar ao Carrinho</button>
         </div>
     </div>
 
