@@ -62,18 +62,46 @@
             bottom: 0;
             width: 100%;
         }
+   /*  ESTILIZANDO O MENU BOX */
+       .mer-diagram {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .mer-box {
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #e8f5e9;
+            width: 200px;
+        }
+        .mer-box a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .mer-box a:hover {
+            text-decoration: underline;
+        }
+
+        
     </style>
 </head>
 <body>
     <header>
         <h1>Catálogo de Produtos</h1>
             <nav>
-        <a href="#cliente">PROCESSADORES</a>
-        <a href="#produto">MOTHERBOARDS</a>
-        <a href="#estoque">GABINETES</a>
-        <a href="#compras">MONITORES</a>
-        <a href="#site_compras">Site/Login</a>
-    </nav>
+        <div class="mer-diagram">
+            <div class="mer-box"><a href="#gabinietes">Gabinetes</a></div>
+            <div class="mer-box"><a href="#processadores">Processadores</a></div>
+            <div class="mer-box"><a href="#monitores">Monitores</a></div>
+            <div class="mer-box"><a href="#poeriféricos">Periféricos</a></div>
+        </div>
+         </nav>
     </header>
     <div class="container">
         <div class="product-card">
@@ -85,14 +113,14 @@
         
     <div class="container">
         <div class="product-card">
-            <img src="gabinete.jpg" alt="Produto 2">
+            <img src="gabinete.jpeg" alt="Produto 2">
             <h3>Produto 2 <br> GABINETE </h3>
             <p>R$ 2.800,00</p>
             <button onclick="addToCart('Produto 2', 150)">Adicionar ao Carrinho</button>
         </div>
         
         <div class="product-card">
-            <img src="produto2.jpg" alt="Produto 3">
+            <img src="cpu.jpg" alt="Produto 3">
             <h3>Produto 3 <BR> PROCESSADOR core I3</h3>
             <p>R$ 1.100,00</p>
             <button onclick="addToCart('Produto 3', 200)">Adicionar ao Carrinho</button>
