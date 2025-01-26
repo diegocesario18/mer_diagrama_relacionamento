@@ -34,13 +34,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .product-card img {
-            width: 100%;
+            width: 150px; /* Ajuste o tamanho desejado para as imagens */
             height: auto;
             border-radius: 10px;
         }
         .product-card h3 {
             font-size: 18px;
             margin: 10px 0;
+        }
+        .product-card p {
+            font-weight: bold;
+            font-size: 16px;
         }
         .product-card button {
             background-color: #4caf50;
@@ -49,6 +53,7 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 10px;
         }
         .product-card button:hover {
             background-color: #45a049;
@@ -62,8 +67,8 @@
             bottom: 0;
             width: 100%;
         }
-   /*  ESTILIZANDO O MENU BOX */
-       .mer-diagram {
+        /* Estilizando o menu box */
+        .mer-diagram {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -87,43 +92,41 @@
         .mer-box a:hover {
             text-decoration: underline;
         }
-
-        
     </style>
 </head>
 <body>
     <header>
         <h1>Catálogo de Produtos</h1>
-            <nav>
-        <div class="mer-diagram">
-            <div class="mer-box"><a href="#gabinietes">Gabinetes</a></div>
-            <div class="mer-box"><a href="#processadores">Processadores</a></div>
-            <div class="mer-box"><a href="#monitores">Monitores</a></div>
-            <div class="mer-box"><a href="#poeriféricos">Periféricos</a></div>
-        </div>
-         </nav>
+        <nav>
+            <div class="mer-diagram">
+                <div class="mer-box"><a href="#gabinietes">Gabinetes</a></div>
+                <div class="mer-box"><a href="#processadores">Processadores</a></div>
+                <div class="mer-box"><a href="#monitores">Monitores</a></div>
+                <div class="mer-box"><a href="#poeriféricos">Periféricos</a></div>
+            </div>
+        </nav>
     </header>
+
     <div class="container">
         <div class="product-card">
             <img src="monitor.jpg" alt="Produto 1">
-            <h3>Produto 1 <BR> MONITOR</h3>
+            <h3>Produto 1 - Monitor</h3>
             <p>R$ 1.000,00</p>
-            <button onclick="addToCart('Produto 1', 100)">Adicionar ao Carrinho</button>
+            <button onclick="addToCart('Produto 1 - Monitor', 1000)">Adicionar ao Carrinho</button>
         </div>
-        
-    <div class="container">
+
         <div class="product-card">
             <img src="gabinete.jpeg" alt="Produto 2">
-            <h3>Produto 2 <br> GABINETE </h3>
+            <h3>Produto 2 - Gabinete</h3>
             <p>R$ 2.800,00</p>
-            <button onclick="addToCart('Produto 2', 150)">Adicionar ao Carrinho</button>
+            <button onclick="addToCart('Produto 2 - Gabinete', 2800)">Adicionar ao Carrinho</button>
         </div>
-        
+
         <div class="product-card">
             <img src="cpu.jpg" alt="Produto 3">
-            <h3>Produto 3 <BR> PROCESSADOR core I3</h3>
+            <h3>Produto 3 - Processador Core i3</h3>
             <p>R$ 1.100,00</p>
-            <button onclick="addToCart('Produto 3', 200)">Adicionar ao Carrinho</button>
+            <button onclick="addToCart('Produto 3 - Processador Core i3', 1100)">Adicionar ao Carrinho</button>
         </div>
     </div>
 
